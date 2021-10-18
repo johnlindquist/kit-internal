@@ -32,12 +32,7 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "./.kit"
-        }
-      ],
+      "@semantic-release/npm",
       [
         "semantic-release-plugin-update-version-in-files",
         {
