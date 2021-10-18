@@ -14,12 +14,16 @@
   "files": [
     "dist/*"
   ],
+  "scripts": {
+    "build": "node ./build-bundles.js && tsc"
+  },
   "devDependencies": {
     "date-fns": "^2.25.0",
     "esbuild": "^0.13.8",
     "rxjs": "^7.4.0",
     "semantic-release": "^18.0.0",
-    "semantic-release-plugin-update-version-in-files": "^1.1.0"
+    "semantic-release-plugin-update-version-in-files": "^1.1.0",
+    "typescript": "^4.4.4"
   },
   "release": {
     "branches": [

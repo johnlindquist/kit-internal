@@ -31,7 +31,7 @@ jobs:
 
       - name: build
         run: |
-          node ./build-bundles.js
+          npm run build
 
       - name: Semantic Release
         run: |

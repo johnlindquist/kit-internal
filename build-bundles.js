@@ -11,5 +11,6 @@ for (let bundle of bundles) {
     format: "esm",
     outfile: `./dist/${bundle}`.replace(/\.ts$/, ".js"),
     minify: true,
+    tsconfig: "./tsconfig.json",
   })
 }
