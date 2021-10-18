@@ -1,0 +1,50 @@
+{
+  "name": "@johnlindquist/kit-bundles",
+  "version": "0.0.0-development",
+  "description": "Minified Script Kit bundles",
+  "type": "module",
+  "exports": {
+    "./*": "./*"
+  },
+  "devDependencies": {
+    "date-fns": "^2.25.0",
+    "esbuild": "^0.13.8",
+    "rxjs": "^7.4.0",
+    "semantic-release": "^18.0.0",
+    "semantic-release-plugin-update-version-in-files": "^1.1.0"
+  },
+  "author": "John Lindquist (https://johnlindquist.com)",
+  "release": {
+    "branches": [
+      "+([0-9]).x",
+      "main",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./.kit"
+        }
+      ],
+      [
+        "semantic-release-plugin-update-version-in-files",
+        {
+          "files": [
+            "./.kit/package.json"
+          ]
+        }
+      ]
+    ]
+  }
+}
