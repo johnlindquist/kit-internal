@@ -6,8 +6,11 @@
   "description": "Minified Script Kit bundles",
   "type": "module",
   "exports": {
-    "./*": "./*"
+    "./*": "./bundles/*.js"
   },
+  "files": [
+    "./bundles/*"
+  ],
   "devDependencies": {
     "date-fns": "^2.25.0",
     "esbuild": "^0.13.8",
@@ -32,7 +35,6 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
       [
         "semantic-release-plugin-update-version-in-files",
         {
@@ -40,7 +42,8 @@
             "./package.json"
           ]
         }
-      ]
+      ],
+      "@semantic-release/npm"
     ]
   }
 }
