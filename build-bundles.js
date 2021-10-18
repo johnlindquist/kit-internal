@@ -9,7 +9,7 @@ for (let bundle of bundles) {
     treeShaking: true,
     bundle: true,
     format: "esm",
-    outfile: `./bundles/${bundle}`.replace(/\.ts$/, ".js"),
+    outfile: `./dist/${bundle}`.replace(/\.ts$/, ".js"),
     minify: true,
   })
 }

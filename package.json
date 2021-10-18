@@ -9,10 +9,10 @@
   "description": "Minified Script Kit bundles",
   "type": "module",
   "exports": {
-    "./*": "./bundles/*.js"
+    "./*": "./dist/*.js"
   },
   "files": [
-    "./bundles/**/*"
+    "dist/*"
   ],
   "devDependencies": {
     "date-fns": "^2.25.0",
