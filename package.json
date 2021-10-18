@@ -1,5 +1,7 @@
 {
   "name": "@johnlindquist/kit-bundles",
+  "author": "John Lindquist (https://johnlindquist.com)",
+  "license": "ISC",
   "version": "0.0.0-development",
   "description": "Minified Script Kit bundles",
   "type": "module",
@@ -13,7 +15,6 @@
     "semantic-release": "^18.0.0",
     "semantic-release-plugin-update-version-in-files": "^1.1.0"
   },
-  "author": "John Lindquist (https://johnlindquist.com)",
   "release": {
     "branches": [
       "+([0-9]).x",
@@ -41,7 +42,7 @@
         "semantic-release-plugin-update-version-in-files",
         {
           "files": [
-            "./.kit/package.json"
+            "./package.json"
           ]
         }
       ]

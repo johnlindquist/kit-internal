@@ -1,4 +1,4 @@
-name: Release kit.zip
+name: Publish kit-bundles
 
 on:
   push:
