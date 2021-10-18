@@ -10,5 +10,6 @@ for (let bundle of bundles) {
     bundle: true,
     format: "esm",
     outfile: `./bundles/${bundle}`.replace(/\.ts$/, ".js"),
+    minify: true,
   })
 }

@@ -3,7 +3,10 @@
   "author": "John Lindquist (https://johnlindquist.com)",
   "license": "ISC",
   "version": "0.0.0-development",
-  "description": "Minified Script Kit bundles",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "MinifiedScript Kit bundles",
   "type": "module",
   "exports": {
     "./*": "./bundles/*.js"
@@ -35,14 +38,6 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      [
-        "semantic-release-plugin-update-version-in-files",
-        {
-          "files": [
-            "./package.json"
-          ]
-        }
-      ],
       "@semantic-release/npm"
     ]
   }
