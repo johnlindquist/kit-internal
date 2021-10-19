@@ -142,6 +142,14 @@ declare global {
 	}
 }
 declare global {
+	var chalk: ChalkFunction;
+	namespace NodeJS {
+		interface Global {
+			chalk: ChalkFunction;
+		}
+	}
+}
+declare global {
 	var get: AxiosInstance["get"];
 	var put: AxiosInstance["put"];
 	var post: AxiosInstance["post"];
