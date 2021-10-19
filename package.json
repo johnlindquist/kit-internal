@@ -29,6 +29,7 @@
     "concurrently": "^6.3.0",
     "date-fns": "^2.25.0",
     "dts-bundle-generator": "^5.9.0",
+    "esbuild": "^0.13.8",
     "rollup": "^2.58.0",
     "rollup-plugin-dts": "^4.0.0",
     "rollup-plugin-node-globals": "^1.4.0",
