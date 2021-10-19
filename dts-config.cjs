@@ -8,6 +8,7 @@ const commonOutputParams = {
   inlineDeclareGlobals: true,
   inlineDeclareExternals: true,
   sortNodes: true,
+  exportReferencedTypes: true,
 }
 
 /** @type import('dts-bundle-generator/config-schema').BundlerConfig */

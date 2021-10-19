@@ -1,47 +1,40 @@
 {
-  "name": "@johnlindquist/kit-bundles",
+  "name": "@johnlindquist/kit-internal",
   "author": "John Lindquist (https://johnlindquist.com)",
   "license": "ISC",
   "version": "0.0.0-development",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Minified Script Kit bundles",
+  "description": "Shaving off npm install size of Kit",
   "type": "module",
   "main": "./dist/index.js",
+  "source": "./src/index.ts",
   "types": "./types/index.d.ts",
   "files": [
     "dist/*",
     "types/*"
   ],
   "scripts": {
-    "build": "node ./build-bundles.js && dts-bundle-generator --config ./dts-config.cjs"
+    "test": "ava",
+    "build-bundle": "node ./build-rollup.js",
+    "build-types": "dts-bundle-generator --config ./dts-config.cjs",
+    "build": "concurrently npm:build-*"
   },
   "devDependencies": {
-    "@types/node": "^16.11.1",
-    "axios": "^0.23.0",
-    "chalk": "^4.1.2",
-    "clipboardy": "^3.0.0",
+    "@rollup/plugin-commonjs": "^21.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
     "date-fns": "^2.25.0",
-    "degit": "^2.8.4",
-    "download": "^8.0.0",
-    "dts-bundle-generator": "^5.9.0",
-    "esbuild": "^0.13.8",
-    "handlebars": "^4.7.7",
-    "lodash": "^4.17.21",
-    "marked": "^2.1.3",
-    "node-fetch": "^3.0.0",
-    "node-notifier": "^10.0.0",
     "rollup": "^2.58.0",
     "rollup-plugin-dts": "^4.0.0",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-terser": "^7.0.2",
     "rxjs": "^7.4.0",
     "semantic-release": "^18.0.0",
     "semantic-release-plugin-update-version-in-files": "^1.1.0",
-    "shelljs": "^0.8.4",
-    "trash": "^8.0.0",
-    "typescript": "^4.4.4",
-    "uuid": "^8.3.2",
-    "zx": "^4.2.0"
+    "typescript": "^4.4.4"
   },
   "release": {
     "branches": [

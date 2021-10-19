@@ -20,6 +20,7 @@ files = files.filter(f => f !== "index.ts")
 
 let entryFileContent = `
 ${files
+  .filter(f => !f.includes("axios"))
   .map(f => `export * from "./${f.replace(/\.ts$/, "")}"`)
   .join("\n")}
 `
@@ -31,8 +32,10 @@ esbuild.buildSync({
   platform: "node",
   bundle: true,
   format: "esm",
-  outfile: `./dist/index.js`,
-  minify: true,
+
+  outdir: "./dist",
+  // minify: true,
   tsconfig: "./tsconfig.json",
   external: ["electron"],
+  target: ["node14.8"],
 })

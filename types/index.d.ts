@@ -141,28 +141,6 @@ declare global {
 		readonly observable: symbol;
 	}
 }
-declare global {
-	var chalk: ChalkFunction;
-	namespace NodeJS {
-		interface Global {
-			chalk: ChalkFunction;
-		}
-	}
-}
-declare global {
-	var get: AxiosInstance["get"];
-	var put: AxiosInstance["put"];
-	var post: AxiosInstance["post"];
-	var patch: AxiosInstance["patch"];
-	namespace NodeJS {
-		interface Global {
-			get: AxiosInstance["get"];
-			put: AxiosInstance["put"];
-			post: AxiosInstance["post"];
-			patch: AxiosInstance["patch"];
-		}
-	}
-}
 /**
  * A representation of any set of values over any amount of time. This is the most basic building block
  * of RxJS.
@@ -458,6 +436,36 @@ export declare function tap<T>(observer?: Partial<TapObserver<T>>): MonoTypeOper
  * comments here: https://github.com/microsoft/TypeScript/issues/28682#issuecomment-707142417
  */
 export declare type Falsy = null | undefined | false | 0 | -0 | 0n | "";
+export declare type Locale = {
+	code?: string;
+	formatDistance?: (...args: Array<any>) => any;
+	formatRelative?: (...args: Array<any>) => any;
+	localize?: {
+		ordinalNumber: (...args: Array<any>) => any;
+		era: (...args: Array<any>) => any;
+		quarter: (...args: Array<any>) => any;
+		month: (...args: Array<any>) => any;
+		day: (...args: Array<any>) => any;
+		dayPeriod: (...args: Array<any>) => any;
+	};
+	formatLong?: {
+		date: (...args: Array<any>) => any;
+		time: (...args: Array<any>) => any;
+		dateTime: (...args: Array<any>) => any;
+	};
+	match?: {
+		ordinalNumber: (...args: Array<any>) => any;
+		era: (...args: Array<any>) => any;
+		quarter: (...args: Array<any>) => any;
+		month: (...args: Array<any>) => any;
+		day: (...args: Array<any>) => any;
+		dayPeriod: (...args: Array<any>) => any;
+	};
+	options?: {
+		weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+		firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+	};
+};
 /**
  * Valid types that can be converted to observables.
  */
@@ -495,6 +503,12 @@ export function format(date: Date | number, format: string, options?: {
 export function formatDistanceToNow(date: Date | number, options?: {
 	includeSeconds?: boolean;
 	addSuffix?: boolean;
+	locale?: Locale;
+}): string;
+export function formatDistanceToNowStrict(date: Date | number, options?: {
+	addSuffix?: boolean;
+	unit?: "second" | "minute" | "hour" | "day" | "month" | "year";
+	roundingMethod?: "floor" | "ceil" | "round";
 	locale?: Locale;
 }): string;
 export function parseISO(argument: string, options?: {
@@ -625,6 +639,7 @@ export interface Unsubscribable {
 export namespace compareAsc { }
 export namespace format { }
 export namespace formatDistanceToNow { }
+export namespace formatDistanceToNowStrict { }
 export namespace parseISO { }
 
 export {};

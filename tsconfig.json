@@ -6,6 +6,8 @@
     "rootDir": "./src",
     "moduleResolution": "Node",
     "declaration": true,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["ESNext"]
   }
 }
