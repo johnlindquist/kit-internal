@@ -1,16 +1,25 @@
 import { readdir } from "fs/promises"
 import esbuild from "esbuild"
 
-let bundles = await readdir("./src")
+// let bundles = await readdir("./src")
 
-for (let bundle of bundles) {
-  esbuild.buildSync({
-    entryPoints: [`./src/${bundle}`],
-    treeShaking: true,
-    bundle: true,
-    format: "esm",
-    outfile: `./dist/${bundle}`.replace(/\.ts$/, ".js"),
-    minify: true,
-    tsconfig: "./tsconfig.json",
-  })
-}
+// for (let bundle of bundles) {
+//   esbuild.buildSync({
+//     entryPoints: [`./src/${bundle}`],
+//     treeShaking: true,
+//     bundle: true,
+//     format: "esm",
+//     outfile: `./dist/${bundle}`.replace(/\.ts$/, ".js"),
+//     minify: true,
+//     tsconfig: "./tsconfig.json",
+//   })
+// }
+esbuild.buildSync({
+  entryPoints: [`./src/index.ts`],
+  treeShaking: true,
+  bundle: true,
+  format: "esm",
+  outfile: `./dist/index.js`,
+  minify: true,
+  tsconfig: "./tsconfig.json",
+})

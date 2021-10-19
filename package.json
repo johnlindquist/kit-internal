@@ -8,18 +8,23 @@
   },
   "description": "Minified Script Kit bundles",
   "type": "module",
-  "exports": {
-    "./*": "./dist/*.js"
-  },
+  "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
   "files": [
-    "dist/*"
+    "dist/*",
+    "types/*"
   ],
   "scripts": {
-    "build": "node ./build-bundles.js && tsc"
+    "build": "node ./build-bundles.js && dts-bundle-generator --config ./dts-config.cjs"
   },
   "devDependencies": {
+    "@types/node": "^16.11.1",
+    "axios": "^0.23.0",
     "date-fns": "^2.25.0",
+    "dts-bundle-generator": "^5.9.0",
     "esbuild": "^0.13.8",
+    "rollup": "^2.58.0",
+    "rollup-plugin-dts": "^4.0.0",
     "rxjs": "^7.4.0",
     "semantic-release": "^18.0.0",
     "semantic-release-plugin-update-version-in-files": "^1.1.0",
