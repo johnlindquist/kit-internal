@@ -11,6 +11,12 @@
   "main": "./dist/index.js",
   "source": "./src/index.ts",
   "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
   "files": [
     "dist/*",
     "types/*"

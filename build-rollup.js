@@ -37,4 +37,10 @@ await bundle.write({
   compact: true,
 })
 
+await bundle.write({
+  file: "./dist/index.cjs",
+  format: "cjs",
+  compact: true,
+})
+
 await bundle.close()
