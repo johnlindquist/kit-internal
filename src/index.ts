@@ -18,7 +18,7 @@ export {
   tap,
 } from "rxjs/operators"
 
-export * as stripAnsi from "strip-ansi"
+export { default as stripAnsi } from "strip-ansi"
 
 export {
   compareAsc,
@@ -58,3 +58,6 @@ export type Locale = {
     firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7
   }
 }
+
+export { Octokit } from "scriptkit-octokit"
+export { default as generate } from "project-name-generator"
