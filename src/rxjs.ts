@@ -1,5 +1,7 @@
-export { Observable, merge, NEVER, of } from "rxjs"
+export { merge, NEVER, Observable, of } from "rxjs"
 export {
+  debounceTime,
+  distinctUntilChanged,
   filter,
   map,
   share,
