@@ -15,16 +15,16 @@ import esbuild from "esbuild"
 //   })
 // }
 
-let files = await readdir("./src")
-files = files.filter(f => f !== "index.ts")
+// let files = await readdir("./src")
+// files = files.filter(f => f !== "index.ts")
 
-let entryFileContent = `
-${files
-  .filter(f => !f.includes("axios"))
-  .map(f => `export * from "./${f.replace(/\.ts$/, "")}"`)
-  .join("\n")}
-`
-await writeFile("./src/index.ts", entryFileContent)
+// let entryFileContent = `
+// ${files
+//   .filter(f => !f.includes("axios"))
+//   .map(f => `export * from "./${f.replace(/\.ts$/, "")}"`)
+//   .join("\n")}
+// `
+// await writeFile("./src/index.ts", entryFileContent)
 
 esbuild.buildSync({
   entryPoints: [`./src/index.ts`],
