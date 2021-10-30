@@ -1,4 +1,4 @@
-import { readdir, writeFile } from "fs/promises"
+import { readdir, writeFile, mkdir } from "fs/promises"
 import d from "dts-bundle-generator"
 
 let compilationOptions = {
@@ -12,6 +12,7 @@ let output = {
   exportReferencedTypes: true,
 }
 
+await mkdir("./types")
 let entries = await readdir("./src")
 
 for (let entry of entries) {

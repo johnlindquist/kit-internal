@@ -27,8 +27,8 @@
   ],
   "scripts": {
     "test": "ava",
-    "build-bundle": "node ./build-rollup.js",
-    "build-types": "node ./build-dts.js",
+    "build-dist": "node ./build-dist.js",
+    "build-types": "node ./build-types.js",
     "build": "concurrently npm:build-*"
   },
   "devDependencies": {
