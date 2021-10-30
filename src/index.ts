@@ -62,3 +62,4 @@ export type Locale = {
 export { Octokit } from "scriptkit-octokit"
 export { default as generate } from "project-name-generator"
 export { Low, JSONFile } from "lowdb"
+export { default as highlight } from "highlight.js"
