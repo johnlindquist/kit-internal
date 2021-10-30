@@ -1,5 +1,4 @@
-import fs from "fs-extra"
-export let {
+export {
   appendFile,
   emptyDir,
   ensureFile,
@@ -17,4 +16,4 @@ export let {
   remove,
   writeFile,
   writeJson,
-} = fs
+} from "fs-extra"
