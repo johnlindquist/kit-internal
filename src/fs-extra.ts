@@ -1,0 +1,20 @@
+import fs from "fs-extra"
+export let {
+  appendFile,
+  emptyDir,
+  ensureFile,
+  ensureDir,
+  ensureLink,
+  ensureSymlink,
+  mkdirp,
+  mkdirs,
+  outputFile,
+  outputJson,
+  pathExists,
+  readdir,
+  readFile,
+  readJson,
+  remove,
+  writeFile,
+  writeJson,
+} = fs
