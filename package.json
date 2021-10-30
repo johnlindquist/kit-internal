@@ -28,7 +28,7 @@
   "scripts": {
     "test": "ava",
     "build-bundle": "node ./build-rollup.js",
-    "build-types": "dts-bundle-generator --config ./dts-config.cjs",
+    "build-types": "node ./build-dts.js",
     "build": "concurrently npm:build-*"
   },
   "devDependencies": {
