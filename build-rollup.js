@@ -6,41 +6,36 @@ import commonjs from "@rollup/plugin-commonjs"
 import json from "@rollup/plugin-json"
 import { terser } from "rollup-plugin-terser"
 
-// let files = await readdir("./src")
-// files = files.filter(f => f !== "index.ts")
+let entries = await readdir("./src")
 
-// let entryFileContent = `
-// ${files
-//   .map(f => `export * from "./${f.replace(/\.ts$/, "")}"`)
-//   .join("\n")}
-// `
-// await writeFile("./src/index.ts", entryFileContent)
+for (let entry of entries) {
+  let name = entry.replace(/\.ts$/, "")
+  let bundle = await rollup({
+    input: `./src/${entry}`,
+    treeshake: true,
 
-let bundle = await rollup({
-  input: "./src/index.ts",
-  treeshake: true,
+    plugins: [
+      typescript(),
+      resolve({
+        preferBuiltins: true,
+      }),
+      commonjs(),
+      json(),
+      terser(),
+    ],
+  })
 
-  plugins: [
-    typescript(),
-    resolve({
-      preferBuiltins: true,
-    }),
-    commonjs(),
-    json(),
-    terser(),
-  ],
-})
+  await bundle.write({
+    file: `./dist/${name}.js`,
+    format: "esm",
+    compact: true,
+  })
 
-await bundle.write({
-  file: "./dist/index.js",
-  format: "esm",
-  compact: true,
-})
+  await bundle.write({
+    file: `./dist/${name}.cjs`,
+    format: "cjs",
+    compact: true,
+  })
 
-await bundle.write({
-  file: "./dist/index.cjs",
-  format: "cjs",
-  compact: true,
-})
-
-await bundle.close()
+  await bundle.close()
+}

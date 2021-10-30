@@ -8,13 +8,17 @@
   },
   "description": "Shaving off npm install size of Kit",
   "type": "module",
-  "main": "./dist/index.js",
-  "source": "./src/index.ts",
-  "types": "./types/index.d.ts",
+  "typesVersions": {
+    ">=4.2": {
+      "*": [
+        "dist/types/*"
+      ]
+    }
+  },
   "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
+    "./*": {
+      "require": "./dist/*.cjs",
+      "default": "./dist/*.js"
     }
   },
   "files": [
@@ -42,7 +46,6 @@
     "dts-bundle-generator": "^5.9.0",
     "enquirer": "^2.3.6",
     "esbuild": "^0.13.8",
-    "highlight.js": "^11.3.1",
     "lowdb": "^3.0.0",
     "minimist": "^1.2.5",
     "project-name-generator": "^2.1.9",
