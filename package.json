@@ -9,9 +9,9 @@
   "description": "Shaving off npm install size of Kit",
   "type": "module",
   "typesVersions": {
-    ">=4.2": {
+    ">=0": {
       "*": [
-        "dist/types/*"
+        "types/*"
       ]
     }
   },
