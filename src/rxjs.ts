@@ -6,7 +6,9 @@ export {
   map,
   share,
   switchMap,
+  scan,
   take,
   takeUntil,
   tap,
+  withLatestFrom,
 } from "rxjs/operators"
