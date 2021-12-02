@@ -1,4 +1,15 @@
-export { merge, NEVER, Observable, of } from "rxjs"
+export {
+  merge,
+  NEVER,
+  Observable,
+  of,
+  from,
+  fromEvent,
+  Subject,
+  BehaviorSubject,
+  ReplaySubject,
+  AsyncSubject,
+} from "rxjs"
 export {
   debounceTime,
   distinctUntilChanged,
