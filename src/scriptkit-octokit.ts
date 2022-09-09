@@ -1,1 +1,7 @@
 export { Octokit } from "scriptkit-octokit"
+export { Octokit as OctokitCore } from "@octokit/core"
+export { paginateRest } from "@octokit/plugin-paginate-rest"
+export { restEndpointMethods } from "@octokit/plugin-rest-endpoint-methods"
+export { retry } from "@octokit/plugin-retry"
+export { throttling } from "@octokit/plugin-throttling"
+export { createOAuthDeviceAuth } from "@octokit/auth-oauth-device"
