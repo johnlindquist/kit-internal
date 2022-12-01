@@ -1,1 +1,2 @@
-export { Low, JSONFile } from "lowdb"
+export { Low } from "lowdb"
+export { JSONFile } from "lowdb/node"

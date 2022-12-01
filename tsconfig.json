@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+		"module": "node16",
+		"moduleResolution": "node16",
     "outDir": "./types",
     "rootDir": "./src",
-    "moduleResolution": "Node",
     "declaration": true,
     "emitDeclarationOnly": true,
     "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
     "lib": ["ESNext"]
   }
 }
