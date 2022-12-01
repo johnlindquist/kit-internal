@@ -1,4 +1,4 @@
-import { readdir, writeFile } from "fs/promises"
+import { readdir } from "fs/promises"
 import { rollup } from "rollup"
 import typescript from "@rollup/plugin-typescript"
 import resolve from "@rollup/plugin-node-resolve"
@@ -10,7 +10,7 @@ let entries = await readdir("./src")
 
 console.log(`Entries: ${entries}`)
 
-for (let entry of entries) {
+for await (let entry of entries) {
   console.log(`Generating dist for ${entry}`)
   let name = entry.replace(/\.ts$/, "")
   let bundle = await rollup({
@@ -42,8 +42,9 @@ for (let entry of entries) {
     compact: true,
   })
 
-  console.log(`Closing bundle`)
   await bundle.close()
+
+  console.log(`${name} bundle complete`)
 }
 
 console.log(`Done building dist`)

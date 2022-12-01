@@ -12,12 +12,14 @@ let output = {
   exportReferencedTypes: true,
 }
 
-await mkdir("./types")
+// only create the ./types dir if it doesn't exist
+await mkdir("./types", { recursive: true })
+
 let entries = await readdir("./src")
 
 console.log(`Entries: ${entries}`)
 
-for (let entry of entries) {
+for await (let entry of entries) {
   console.log(`Generating types for ${entry}`)
   let outFile = `./types/${entry.replace(/\.ts$/, ".d.ts")}`
   let entries = [
@@ -33,8 +35,8 @@ for (let entry of entries) {
     },
   ]
   let content = d.generateDtsBundle(entries, compilationOptions)
-  console.log(`Writing types to ${outFile}`)
   await writeFile(outFile, content)
+  console.log(`${entry} types complete`)
 }
 
 console.log(`Done building types`)
