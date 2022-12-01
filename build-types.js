@@ -16,6 +16,7 @@ await mkdir("./types")
 let entries = await readdir("./src")
 
 for (let entry of entries) {
+  console.log(`Generating types for ${entry}`)
   let outFile = `./types/${entry.replace(/\.ts$/, ".d.ts")}`
   let entries = [
     {
@@ -29,9 +30,7 @@ for (let entry of entries) {
       },
     },
   ]
-  let content = d.generateDtsBundle(
-    entries,
-    compilationOptions
-  )
+  let content = d.generateDtsBundle(entries, compilationOptions)
+  console.log(`Writing types to ${outFile}`)
   await writeFile(outFile, content)
 }

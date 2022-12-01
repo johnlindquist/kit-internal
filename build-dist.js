@@ -9,6 +9,7 @@ import { terser } from "rollup-plugin-terser"
 let entries = await readdir("./src")
 
 for (let entry of entries) {
+  console.log(`Generating dist for ${entry}`)
   let name = entry.replace(/\.ts$/, "")
   let bundle = await rollup({
     input: `./src/${entry}`,
@@ -25,12 +26,14 @@ for (let entry of entries) {
     ],
   })
 
+  console.log(`Writing dist to ./dist/${name}.js`)
   await bundle.write({
     file: `./dist/${name}.js`,
     format: "esm",
     compact: true,
   })
 
+  console.log(`Writing dist to ./dist/${name}.cjs`)
   await bundle.write({
     file: `./dist/${name}.cjs`,
     format: "cjs",
