@@ -47,4 +47,5 @@ for await (let entry of entries) {
   console.log(`${name} bundle complete`)
 }
 
-console.log(`Done building dist`)
+console.log(`✅ Done building dist`)
+process.exit(0)

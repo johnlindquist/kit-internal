@@ -39,4 +39,5 @@ for await (let entry of entries) {
   console.log(`${entry} types complete`)
 }
 
-console.log(`Done building types`)
+console.log(`✅ Done building types`)
+process.exit(0)
