@@ -18,9 +18,10 @@ jobs:
         os: [macos-latest]
 
     steps:
-      - uses: actions/setup-node@v2
+      - name: Setup node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: 16.14.2
 
       - name: Checkout kit-bundles
         uses: actions/checkout@master

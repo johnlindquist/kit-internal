@@ -8,6 +8,8 @@ import { terser } from "rollup-plugin-terser"
 
 let entries = await readdir("./src")
 
+console.log(`Entries: ${entries}`)
+
 for (let entry of entries) {
   console.log(`Generating dist for ${entry}`)
   let name = entry.replace(/\.ts$/, "")
@@ -40,5 +42,8 @@ for (let entry of entries) {
     compact: true,
   })
 
+  console.log(`Closing bundle`)
   await bundle.close()
 }
+
+console.log(`Done building dist`)

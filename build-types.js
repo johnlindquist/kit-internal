@@ -15,6 +15,8 @@ let output = {
 await mkdir("./types")
 let entries = await readdir("./src")
 
+console.log(`Entries: ${entries}`)
+
 for (let entry of entries) {
   console.log(`Generating types for ${entry}`)
   let outFile = `./types/${entry.replace(/\.ts$/, ".d.ts")}`
@@ -34,3 +36,5 @@ for (let entry of entries) {
   console.log(`Writing types to ${outFile}`)
   await writeFile(outFile, content)
 }
+
+console.log(`Done building types`)
