@@ -27,8 +27,8 @@
   ],
   "scripts": {
     "test": "ava",
-    "build-dist": "node ./build-dist.js",
-    "build-types": "node ./build-types.js",
+    "build-dist": "node --max_old_space_size=4096 ./build-dist.js",
+    "build-types": "node --max_old_space_size=4096 ./build-types.js",
     "build": "concurrently npm:build-*"
   },
   "devDependencies": {
