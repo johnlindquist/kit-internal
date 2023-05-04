@@ -28,7 +28,7 @@ jobs:
 
       - name: npm i
         run: |
-          npm i
+          npm i --force
 
       - name: build
         run: |
