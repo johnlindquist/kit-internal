@@ -46,13 +46,13 @@
     "@types/fs-extra": "^11.0.1",
     "@types/project-name-generator": "^2.1.1",
     "concurrently": "^8.0.1",
-    "date-fns": "^2.30.0",
-    "dotenv": "^16.0.3",
-    "dotenv-flow": "^3.2.0",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "dotenv-flow": "^4.1.0",
     "dts-bundle-generator": "^8.0.1",
-    "enquirer": "^2.3.6",
-    "fs-extra": "^11.1.1",
-    "lowdb": "^6.0.1",
+    "enquirer": "^2.4.1",
+    "fs-extra": "^11.2.0",
+    "lowdb": "^7.0.1",
     "minimist": "^1.2.8",
     "project-name-generator": "^2.1.9",
     "rollup": "^3.21.4",
@@ -63,8 +63,8 @@
     "scriptkit-octokit": "^1.0.4",
     "semantic-release": "^21.0.2",
     "semantic-release-plugin-update-version-in-files": "^1.1.0",
-    "strip-ansi": "^7.0.1",
-    "typescript": "^5.0.4"
+    "strip-ansi": "^7.1.0",
+    "typescript": "^5.4.5"
   },
   "release": {
     "branches": [
