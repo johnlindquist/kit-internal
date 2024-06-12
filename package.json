@@ -46,7 +46,7 @@
     "@types/fs-extra": "^11.0.1",
     "@types/project-name-generator": "^2.1.1",
     "concurrently": "^8.0.1",
-    "date-fns": "^3.6.0",
+    "date-fns": "^2.30.0",
     "dotenv": "^16.4.5",
     "dotenv-flow": "^4.1.0",
     "dts-bundle-generator": "^8.0.1",
